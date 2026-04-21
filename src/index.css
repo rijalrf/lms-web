@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6; 
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-900: #1e3a8a;
+
+  --color-bg-light: #f8fafc;
+  --color-bg-dark: #0f172a;
+  --color-text-light: #334155;
+  --color-text-dark: #f1f5f9;
+}
+
+@layer base {
+  :root {
+    --background: var(--color-bg-light);
+    --foreground: var(--color-text-light);
+  }
+  .dark {
+    --background: var(--color-bg-dark);
+    --foreground: var(--color-text-dark);
+  }
+  
+  body {
+    background-color: var(--background);
+    color: var(--foreground);
+    @apply transition-colors duration-300;
+  }
+
+  /* Force pointer cursor on all clickable elements */
+  button, 
+  a, 
+  select, 
+  input[type="button"], 
+  input[type="submit"], 
+  input[type="checkbox"], 
+  input[type="radio"],
+  .cursor-pointer {
+    cursor: pointer !important;
+  }
+}

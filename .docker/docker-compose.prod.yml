@@ -1,12 +1,9 @@
 services:
-  lms-web-prod:
-    build:
-      context: ..
-      dockerfile: .docker/Dockerfile
-      target: prod
-    container_name: lms-web-prod
+  lms-web:
+    image: lms-web:latest
+    container_name: lms-web
     ports:
-      - "8080:80"
+      - ${PORT}:80
     environment:
       - VITE_API_BASE_URL=${VITE_API_BASE_URL}
     restart: always
